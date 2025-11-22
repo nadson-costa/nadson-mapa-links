@@ -4,7 +4,7 @@ export default function ProfileHeader({ name, title }) {
       <h1 className="text-xl font-medium text-white">
         {name}
       </h1>
-      <p className="text-sm font-normal text-gray-400 mt-1.5">
+      <p className="text-sm font-normal text-gray-400 mt-2">
         {title}
       </p>
     </header>

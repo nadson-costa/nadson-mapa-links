@@ -49,7 +49,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start p-6 animate-fade-in">
-      <main className="w-full max-w-md">
+      <main className="w-full max-w-lg">
         <Avatar imageUrl={PROFILE_DATA.avatarUrl} alt={`Foto de ${PROFILE_DATA.name}`} />
         <ProfileHeader name={PROFILE_DATA.name} title={PROFILE_DATA.title} />
         
