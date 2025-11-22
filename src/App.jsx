@@ -6,6 +6,7 @@ import LinkButton from '@/components/LinkButton'
 import Footer from '@/components/Footer'
 import Loading from '@/components/Loading'
 import ProjectsView from '@/components/ProjectsView'
+import TalksView from '@/components/TalksView'
 import { PROFILE_DATA, SOCIAL_LINKS, MAIN_LINKS, FOOTER_DATA } from '@/config/data'
 
 export default function App() {
@@ -18,14 +19,14 @@ export default function App() {
       setIsExiting(true)
       setTimeout(() => {
         setLoading(false)
-      }, 800)
+      }, 1200)
     }, 1500)
 
     return () => clearTimeout(timer)
   }, [])
 
-  const handleProjectsClick = () => {
-    setCurrentView('projects')
+  const handleNavigation = (view) => {
+    setCurrentView(view)
   }
 
   const handleBackToHome = () => {
@@ -37,7 +38,7 @@ export default function App() {
       <div 
         className={`
           fixed inset-0 z-50
-          transition-transform duration-700 ease-out
+          transition-transform duration-1000 ease-out
           ${isExiting ? '-translate-y-full' : 'translate-y-0'}
         `}
       >
@@ -56,7 +57,7 @@ export default function App() {
           <SocialIcons links={SOCIAL_LINKS} />
         </div>
         
-        {currentView === 'home' ? (
+        {currentView === 'home' && (
           <section className="w-full space-y-2 animate-fade-in" aria-label="Links principais">
             {MAIN_LINKS.map((link) => (
               <LinkButton
@@ -66,12 +67,18 @@ export default function App() {
                 href={link.href}
                 icon={link.icon}
                 type={link.type}
-                onClick={link.type === 'internal' ? handleProjectsClick : undefined}
+                onClick={link.type === 'internal' ? () => handleNavigation(link.view) : undefined}
               />
             ))}
           </section>
-        ) : (
+        )}
+        
+        {currentView === 'projects' && (
           <ProjectsView onBack={handleBackToHome} />
+        )}
+        
+        {currentView === 'talks' && (
+          <TalksView onBack={handleBackToHome} />
         )}
         
         <Footer cnpj={FOOTER_DATA.cnpj} fullName={FOOTER_DATA.fullName} />

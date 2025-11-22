@@ -1,6 +1,6 @@
 export default function SocialIcons({ links }) {
   return (
-    <nav className="flex justify-center items-center gap-6 mb-8" aria-label="Redes sociais">
+    <nav className="flex justify-center items-center gap-6 mb-3" aria-label="Redes sociais">
       {links.map((link) => (
         <a
           key={link.label}

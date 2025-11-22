@@ -1,8 +1,9 @@
-import { FileText, Code, Instagram, Linkedin, Github, Mail, FolderGit2 } from 'lucide-react'
+import { FileText, Code, Instagram, Linkedin, Github, Mail, FolderGit2, Presentation } from 'lucide-react'
+import { href } from 'react-router-dom'
 
 export const PROFILE_DATA = {
   name: 'Nadson Costa',
-  title: 'Supervisor de Tecnologia @Yellow Kite & Dev Back-End',
+  title: 'Supervisor de Tecnologia @Yellow Kite & Desenvolvedor Back-End',
   avatarUrl: '/img/nadson.webp',
 }
 
@@ -35,6 +36,14 @@ export const MAIN_LINKS = [
     description: 'Meus projetos em destaque',
     icon: <FolderGit2 size={18} />,
     type: 'internal',
+    view: 'projects',
+  },
+  {
+    label: 'Palestras e apresentações',
+    description: 'Eventos e workshops que ministrei',
+    icon: <Presentation size={18} />,
+    type: 'internal',
+    view: 'talks',
   },
   {
     label: 'Minha newsletter',
@@ -70,6 +79,33 @@ export const PROJECTS = [
     description: 'Um serviço de backend para encurtamento de URLs, construído com Python e FastAPI',
     href: 'https://github.com/nadson-costa/encurtador-links-api',
     tech: 'Python, FastAPI, Docker, PostgreSQL, NGINX',
+  },
+]
+
+export const TALKS = [
+  {
+    title: 'BI, Inteligência Artificial e Inovações Tecnológicas',
+    description: 'Ritmo da inovação, conceitos e aplicações de IAs, exemplos práticos de aplicação no setor público para os alunos de pós-graduação de gestão de projetos da Fundepes.',
+    image: '/img/fundepes.webp',
+    date: 'Julho/2025',
+    location: 'FUNDEPES, Maceió/AL',
+    href: 'https://www.linkedin.com/posts/nadsoncosta_ia-tecnologia-inovaaexaeto-activity-7344831966044684288-Zt5A',
+  },
+  {
+    title: 'Agentes de IA no Bitrix24 com o GPT Maker',
+    description: 'Primeiros passos para implementar um agente de IA e como ele pode transformar seu atendimento, trazendo mais agilidade, personalização e eficiência para sua empresa.',
+    image: '/img/ia-bitrix.webp',
+    date: 'Outubro/2025',
+    location: 'YouTube - CRMThink',
+    href: 'https://youtu.be/c1bZDD302M4?si=Qruf2STL7ec6EyEO',
+  },
+  {
+    title: 'Hackathon Detran Alagoas 2025 ',
+    description: 'Sistema integrado que centraliza, organiza e transforma dados e informações de diversas fontes em insights, análises preditivas e alertas automáticos',
+    image: '/img/detran.webp',
+    date: 'Junho/2025',
+    location: 'Espaço Armazém, Maceió/AL',
+    href: 'https://www.linkedin.com/posts/nadsoncosta_inovaaexaeto-detran-hackathon-activity-7336364942578569217-Cirt?',
   },
 ]
 
