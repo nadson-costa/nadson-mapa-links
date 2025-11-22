@@ -1,5 +1,4 @@
 import { FileText, Code, Instagram, Linkedin, Github, Mail, FolderGit2, Presentation } from 'lucide-react'
-import { href } from 'react-router-dom'
 
 export const PROFILE_DATA = {
   name: 'Nadson Costa',
