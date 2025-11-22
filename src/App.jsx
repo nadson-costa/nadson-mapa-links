@@ -18,7 +18,7 @@ export default function App() {
       setIsExiting(true)
       setTimeout(() => {
         setLoading(false)
-      }, 700)
+      }, 800)
     }, 1500)
 
     return () => clearTimeout(timer)
@@ -34,19 +34,25 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className={`${isExiting ? 'animate-slide-up' : ''}`}>
+      <div 
+        className={`
+          fixed inset-0 z-50
+          transition-transform duration-700 ease-out
+          ${isExiting ? '-translate-y-full' : 'translate-y-0'}
+        `}
+      >
         <Loading />
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start p-6">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start p-6 animate-fade-in">
       <main className="w-full max-w-md">
         <Avatar imageUrl={PROFILE_DATA.avatarUrl} alt={`Foto de ${PROFILE_DATA.name}`} />
         <ProfileHeader name={PROFILE_DATA.name} title={PROFILE_DATA.title} />
         
-        <div className="py-2">
+        <div className="py-2 mb-6">
           <SocialIcons links={SOCIAL_LINKS} />
         </div>
         
