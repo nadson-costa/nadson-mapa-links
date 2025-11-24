@@ -64,7 +64,7 @@ export const PROJECTS = [
   {
     title: 'Implantação de infraestrutura de DevOps',
     description: 'Documentação da arquitetura e a implementação de uma plataforma de serviços auto-hospedada em uma VPS Ubuntu',
-    href: 'https://github.com/nadson-costa/projeto-erp',
+    href: 'https://github.com/nadson-costa/self-hosted-paas-vps',
     tech: 'Ubuntu, Docker, NGINX Proxy Manager, Gitea',
   },
   {
