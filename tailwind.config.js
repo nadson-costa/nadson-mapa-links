@@ -15,7 +15,7 @@ export default {
         inter: ['Inter', 'sans-serif'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'fade-in': 'fadeIn 0.2s ease-in-out',
         'spin-slow': 'spin 3s linear infinite',
         'slide-up': 'slideUp 0.7s ease-in-out forwards',
         'gradient-rotate': 'gradientRotate 3s linear infinite',
