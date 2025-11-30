@@ -1,0 +1,48 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set environment
+        id: env
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "ENV_NAME=production" >> $GITHUB_OUTPUT
+            echo "BRANCH=main" >> $GITHUB_OUTPUT
+          else
+            echo "ENV_NAME=development" >> $GITHUB_OUTPUT
+            echo "BRANCH=develop" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to VPS (${{ steps.env.outputs.ENV_NAME }})
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd ~/nadson-mapa-links
+            
+            git fetch origin ${{ steps.env.outputs.BRANCH }}
+            git checkout ${{ steps.env.outputs.BRANCH }}
+            git pull origin ${{ steps.env.outputs.BRANCH }}
+            
+            docker compose down
+            docker compose build --no-cache
+            docker compose up -d
+            
+            docker image prune -f
+            
+            echo "✅ Deploy to ${{ steps.env.outputs.ENV_NAME }} completed!"
