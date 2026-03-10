@@ -2,7 +2,7 @@ import { FileText, Code, Instagram, Linkedin, Github, Mail, FolderGit2, Presenta
 
 export const PROFILE_DATA = {
   name: 'Nadson Alexandre',
-  title: 'Desenvolvedor Back-End & Tech Lead @Yellow Kite',
+  title: 'AI Developer @Mesha',
   avatarUrl: '/img/nadson.webp',
 }
 
