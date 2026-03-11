@@ -1,8 +1,8 @@
 import { FileText, Code, Instagram, Linkedin, Github, Mail, FolderGit2, Presentation } from 'lucide-react'
 
 export const PROFILE_DATA = {
-  name: 'Nadson Alexandre',
-  title: 'AI Developer @Mesha',
+  name: 'Nadson Costa',
+  title: 'AI Software Developer @Mesha',
   avatarUrl: '/img/nadson.webp',
 }
 
