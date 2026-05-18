@@ -46,8 +46,8 @@ export const MAIN_LINKS = [
   },
   {
     label: 'Minha newsletter',
-    description: 'Artigos semanais sobre tecnologia aplicada em negócios',
-    href: 'https://www.linkedin.com/newsletters/7319017819176620033/?displayConfirmation=true',
+    description: 'Artigos semanais sobre engenharia de software',
+    href: 'https://costanadson.substack.com/',
     icon: <FileText size={18} />,
     type: 'external',
   },
