@@ -62,6 +62,12 @@ export const MAIN_LINKS = [
 
 export const PROJECTS = [
   {
+    title: 'Sistema de checklist de qualidade',
+    description: 'Sistema de gestão de qualidade para cliente do segmento de APH privado',
+    href: 'https://github.com/nadson-costa/cronos-checklists',
+    tech: 'FastAPI, Docker, PostgreSQL, Next.js, Tailwind CSS, Prometheus',
+  },
+  {
     title: 'Implantação de infraestrutura de DevOps',
     description: 'Documentação da arquitetura e a implementação de uma plataforma de serviços auto-hospedada em uma VPS Ubuntu',
     href: 'https://github.com/nadson-costa/self-hosted-paas-vps',
@@ -72,12 +78,6 @@ export const PROJECTS = [
     description: 'API RESTful completa, servindo como o backend para uma interface de frontend.',
     href: 'https://github.com/nadson-costa/sistema-email-marketing',
     tech: 'Python, FastAPI, PostgreSQL, Docker, Celery, Redis',
-  },
-  {
-    title: 'Encurtador de URLs com UTM e gerador de QR Code',
-    description: 'Um serviço de backend para encurtamento de URLs, construído com Python e FastAPI',
-    href: 'https://github.com/nadson-costa/encurtador-links-api',
-    tech: 'Python, FastAPI, Docker, PostgreSQL, NGINX',
   },
 ]
 
