@@ -46,8 +46,8 @@ export const MAIN_LINKS = [
   },
   {
     label: 'Minha newsletter',
-    description: 'Artigos semanais sobre engenharia de software',
-    href: 'https://costanadson.substack.com/',
+    description: 'Artigos semanais sobre engenharia de software e inteligência artificial',
+    href: 'https://medium.com/@nadson-costa',
     icon: <FileText size={18} />,
     type: 'external',
   },
