@@ -1,8 +1,8 @@
 import { FileText, Code, Instagram, Linkedin, Github, Mail, FolderGit2, Presentation } from 'lucide-react'
 
 export const PROFILE_DATA = {
-  name: 'Nadson Alexandre',
-  title: 'Desenvolvedor Back-End & Tech Lead @Yellow Kite',
+  name: 'Nadson Costa',
+  title: 'AI Software Developer @Mesha',
   avatarUrl: '/img/nadson.webp',
 }
 
@@ -46,8 +46,8 @@ export const MAIN_LINKS = [
   },
   {
     label: 'Minha newsletter',
-    description: 'Artigos semanais sobre tecnologia aplicada em negócios',
-    href: 'https://www.linkedin.com/newsletters/7319017819176620033/?displayConfirmation=true',
+    description: 'Artigos semanais sobre engenharia de software e inteligência artificial',
+    href: 'https://medium.com/@nadson-costa',
     icon: <FileText size={18} />,
     type: 'external',
   },
@@ -62,6 +62,12 @@ export const MAIN_LINKS = [
 
 export const PROJECTS = [
   {
+    title: 'Sistema de checklist de qualidade',
+    description: 'Sistema de gestão de qualidade para cliente do segmento de APH privado',
+    href: 'https://github.com/nadson-costa/cronos-checklists',
+    tech: 'FastAPI, Docker, PostgreSQL, Next.js, Tailwind CSS, Prometheus',
+  },
+  {
     title: 'Implantação de infraestrutura de DevOps',
     description: 'Documentação da arquitetura e a implementação de uma plataforma de serviços auto-hospedada em uma VPS Ubuntu',
     href: 'https://github.com/nadson-costa/self-hosted-paas-vps',
@@ -72,12 +78,6 @@ export const PROJECTS = [
     description: 'API RESTful completa, servindo como o backend para uma interface de frontend.',
     href: 'https://github.com/nadson-costa/sistema-email-marketing',
     tech: 'Python, FastAPI, PostgreSQL, Docker, Celery, Redis',
-  },
-  {
-    title: 'Encurtador de URLs com UTM e gerador de QR Code',
-    description: 'Um serviço de backend para encurtamento de URLs, construído com Python e FastAPI',
-    href: 'https://github.com/nadson-costa/encurtador-links-api',
-    tech: 'Python, FastAPI, Docker, PostgreSQL, NGINX',
   },
 ]
 
