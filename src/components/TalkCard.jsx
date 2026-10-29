@@ -1,6 +1,6 @@
 import { Calendar, MapPin, ExternalLink } from 'lucide-react'
 
-export default function TalkCard({ title, description, image, date, location, href }) {
+export default function TalkCard({ title, description, image, imagePosition, date, location, href }) {
   return (
     <a
       href={href}
@@ -20,6 +20,7 @@ export default function TalkCard({ title, description, image, date, location, hr
           src={image}
           alt={title}
           className="w-full h-full object-cover"
+          style={{ objectPosition: imagePosition || 'center' }}
           loading="lazy"
         />
       </div>

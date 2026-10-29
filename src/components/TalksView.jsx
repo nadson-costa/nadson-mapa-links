@@ -31,6 +31,7 @@ export default function TalksView({ onBack }) {
             title={localize(talk.title, language)}
             description={localize(talk.description, language)}
             image={talk.image}
+            imagePosition={talk.imagePosition}
             date={localize(talk.date, language)}
             location={talk.location}
             href={talk.href}
