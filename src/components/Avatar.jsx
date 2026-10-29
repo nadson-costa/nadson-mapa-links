@@ -1,13 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Avatar({ imageUrl, alt }) {
   const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    const img = new Image()
-    img.src = imageUrl
-    img.onload = () => setIsLoaded(true)
-  }, [imageUrl])
 
   return (
     <div className="flex justify-center mb-5">
@@ -30,7 +24,7 @@ export default function Avatar({ imageUrl, alt }) {
             src={imageUrl}
             alt={alt}
             className="w-full h-full object-cover"
-            loading="lazy"
+            onLoad={() => setIsLoaded(true)}
           />
         </div>
       </div>

@@ -7,20 +7,24 @@ import Footer from '@/components/Footer'
 import Loading from '@/components/Loading'
 import ProjectsView from '@/components/ProjectsView'
 import TalksView from '@/components/TalksView'
+import LanguageToggle from '@/components/LanguageToggle'
+import { useLanguage } from '@/i18n/LanguageContext'
+import { localize } from '@/i18n/localize'
+import { STRINGS } from '@/i18n/strings'
 import { PROFILE_DATA, SOCIAL_LINKS, MAIN_LINKS, FOOTER_DATA } from '@/config/data'
 
 export default function App() {
   const [loading, setLoading] = useState(true)
   const [isExiting, setIsExiting] = useState(false)
   const [currentView, setCurrentView] = useState('home')
+  const { language } = useLanguage()
+  const s = STRINGS[language]
 
   useEffect(() => {
+    setIsExiting(true)
     const timer = setTimeout(() => {
-      setIsExiting(true)
-      setTimeout(() => {
-        setLoading(false)
-      }, 1200)
-    }, 1500)
+      setLoading(false)
+    }, 1000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -49,21 +53,22 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start p-6 animate-fade-in">
+      <LanguageToggle />
       <main className="w-full max-w-lg">
-        <Avatar imageUrl={PROFILE_DATA.avatarUrl} alt={`Foto de ${PROFILE_DATA.name}`} />
-        <ProfileHeader name={PROFILE_DATA.name} title={PROFILE_DATA.title} />
-        
+        <Avatar imageUrl={PROFILE_DATA.avatarUrl} alt={`${s.photoOf} ${PROFILE_DATA.name}`} />
+        <ProfileHeader name={PROFILE_DATA.name} title={localize(PROFILE_DATA.title, language)} />
+
         <div className="py-2 mb-6">
-          <SocialIcons links={SOCIAL_LINKS} />
+          <SocialIcons links={SOCIAL_LINKS} ariaLabel={s.socialLinksLabel} />
         </div>
-        
+
         {currentView === 'home' && (
-          <section className="w-full space-y-2 animate-fade-in" aria-label="Links principais">
+          <section className="w-full space-y-2 animate-fade-in" aria-label={s.mainLinksLabel}>
             {MAIN_LINKS.map((link) => (
               <LinkButton
-                key={link.label}
-                label={link.label}
-                description={link.description}
+                key={link.id}
+                label={localize(link.label, language)}
+                description={localize(link.description, language)}
                 href={link.href}
                 icon={link.icon}
                 type={link.type}
