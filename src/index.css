@@ -16,6 +16,11 @@
   body {
     @apply bg-background-primary text-white min-h-screen antialiased;
   }
+
+  ::selection {
+    background-color: #106afa;
+    color: white;
+  }
 }
 
 @layer utilities {
