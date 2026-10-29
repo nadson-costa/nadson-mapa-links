@@ -16,8 +16,6 @@ export default {
       },
       animation: {
         'fade-in': 'fadeIn 0.2s ease-in-out',
-        'spin-slow': 'spin 3s linear infinite',
-        'slide-up': 'slideUp 0.7s ease-in-out forwards',
         'gradient-rotate': 'gradientRotate 3s linear infinite',
       },
       keyframes: {
@@ -25,21 +23,11 @@ export default {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        slideUp: {
-          '0%': { 
-            transform: 'translateY(0)',
-            opacity: '1',
-          },
-          '100%': { 
-            transform: 'translateY(-100%)',
-            opacity: '0',
-          },
-        },
         gradientRotate: {
-          '0%': { 
+          '0%': {
             transform: 'rotate(0deg)',
           },
-          '100%': { 
+          '100%': {
             transform: 'rotate(360deg)',
           },
         },

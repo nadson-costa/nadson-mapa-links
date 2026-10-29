@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Avatar from '@/components/Avatar'
 import ProfileHeader from '@/components/ProfileHeader'
 import SocialIcons from '@/components/SocialIcons'
 import LinkButton from '@/components/LinkButton'
 import Footer from '@/components/Footer'
-import Loading from '@/components/Loading'
 import ProjectsView from '@/components/ProjectsView'
 import TalksView from '@/components/TalksView'
 import LanguageToggle from '@/components/LanguageToggle'
@@ -14,20 +13,9 @@ import { STRINGS } from '@/i18n/strings'
 import { PROFILE_DATA, SOCIAL_LINKS, MAIN_LINKS, FOOTER_DATA } from '@/config/data'
 
 export default function App() {
-  const [loading, setLoading] = useState(true)
-  const [isExiting, setIsExiting] = useState(false)
   const [currentView, setCurrentView] = useState('home')
   const { language } = useLanguage()
   const s = STRINGS[language]
-
-  useEffect(() => {
-    setIsExiting(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-
-    return () => clearTimeout(timer)
-  }, [])
 
   const handleNavigation = (view) => {
     setCurrentView(view)
@@ -35,20 +23,6 @@ export default function App() {
 
   const handleBackToHome = () => {
     setCurrentView('home')
-  }
-
-  if (loading) {
-    return (
-      <div 
-        className={`
-          fixed inset-0 z-50
-          transition-transform duration-1000 ease-out
-          ${isExiting ? '-translate-y-full' : 'translate-y-0'}
-        `}
-      >
-        <Loading />
-      </div>
-    )
   }
 
   return (
