@@ -27,7 +27,7 @@
   .transition-smooth {
     @apply transition-all duration-300 ease-in-out;
   }
-  
+
   .animate-gradient-rotate {
     animation: gradientRotate 3s linear infinite;
   }

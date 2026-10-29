@@ -8,6 +8,7 @@ import ProjectsView from '@/components/ProjectsView'
 import TalksView from '@/components/TalksView'
 import CertificationsView from '@/components/CertificationsView'
 import LanguageToggle from '@/components/LanguageToggle'
+import BackgroundEffect from '@/components/BackgroundEffect'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { localize } from '@/i18n/localize'
 import { STRINGS } from '@/i18n/strings'
@@ -28,6 +29,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-start p-6 animate-fade-in">
+      <BackgroundEffect />
       <LanguageToggle />
       <main className="w-full max-w-lg">
         <Avatar imageUrl={PROFILE_DATA.avatarUrl} alt={`${s.photoOf} ${PROFILE_DATA.name}`} />
