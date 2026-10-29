@@ -15,12 +15,10 @@ export default function App() {
   const [currentView, setCurrentView] = useState('home')
 
   useEffect(() => {
+    setIsExiting(true)
     const timer = setTimeout(() => {
-      setIsExiting(true)
-      setTimeout(() => {
-        setLoading(false)
-      }, 1200)
-    }, 1500)
+      setLoading(false)
+    }, 1000)
 
     return () => clearTimeout(timer)
   }, [])
