@@ -6,6 +6,7 @@ import LinkButton from '@/components/LinkButton'
 import Footer from '@/components/Footer'
 import ProjectsView from '@/components/ProjectsView'
 import TalksView from '@/components/TalksView'
+import CertificationsView from '@/components/CertificationsView'
 import LanguageToggle from '@/components/LanguageToggle'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { localize } from '@/i18n/localize'
@@ -59,7 +60,11 @@ export default function App() {
         {currentView === 'talks' && (
           <TalksView onBack={handleBackToHome} />
         )}
-        
+
+        {currentView === 'certifications' && (
+          <CertificationsView onBack={handleBackToHome} />
+        )}
+
         <Footer cnpj={FOOTER_DATA.cnpj} fullName={FOOTER_DATA.fullName} />
       </main>
     </div>

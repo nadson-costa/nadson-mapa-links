@@ -6,6 +6,8 @@ export const STRINGS = {
     projectsHeading: 'Principais projetos',
     projectsLabel: 'Projetos em destaque',
     talksLabel: 'Palestras e treinamentos',
+    certificationsHeading: 'Principais certificações',
+    certificationsLabel: 'Certificações em destaque',
     photoOf: 'Foto de',
   },
   en: {
@@ -15,6 +17,8 @@ export const STRINGS = {
     projectsHeading: 'Main projects',
     projectsLabel: 'Featured projects',
     talksLabel: 'Talks and trainings',
+    certificationsHeading: 'Main certifications',
+    certificationsLabel: 'Featured certifications',
     photoOf: 'Photo of',
   },
 }

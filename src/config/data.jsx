@@ -1,4 +1,4 @@
-import { FileText, Code, Instagram, Linkedin, Github, Mail, FolderGit2, Presentation } from 'lucide-react'
+import { FileText, Award, Instagram, Linkedin, Github, Mail, FolderGit2, Presentation } from 'lucide-react'
 
 export const PROFILE_DATA = {
   name: 'Nadson Costa',
@@ -47,22 +47,22 @@ export const MAIN_LINKS = [
     view: 'talks',
   },
   {
+    id: 'certifications',
+    label: { pt: 'Principais certificações', en: 'Main certifications' },
+    description: { pt: 'Certificações e cursos que concluí', en: "Certifications and courses I've completed" },
+    icon: <Award size={18} />,
+    type: 'internal',
+    view: 'certifications',
+  },
+  {
     id: 'newsletter',
     label: { pt: 'Minha newsletter', en: 'My newsletter' },
     description: {
-      pt: 'Artigos semanais sobre engenharia de software e inteligência artificial',
-      en: 'Weekly articles about software engineering and artificial intelligence',
+      pt: 'Artigos sobre engenharia de software e inteligência artificial',
+      en: 'Articles about software engineering and artificial intelligence',
     },
     href: 'https://medium.com/@nadson-costa',
     icon: <FileText size={18} />,
-    type: 'external',
-  },
-  {
-    id: 'hackerrank',
-    label: { pt: 'Perfil HackerRank', en: 'HackerRank profile' },
-    description: { pt: 'Meus desafios e soluções no HackerRank', en: 'My challenges and solutions on HackerRank' },
-    href: 'https://www.hackerrank.com/profile/nadsonascosta',
-    icon: <Code size={18} />,
     type: 'external',
   },
 ]
@@ -135,6 +135,55 @@ export const TALKS = [
     date: { pt: 'Maio/2026', en: 'May/2026' },
     location: 'UNCISAL, Maceió/AL',
     href: 'https://github.com/nadson-costa/hackathon-uncisal-2026',
+  },
+]
+
+export const CERTIFICATIONS = [
+  {
+    title: { pt: 'Claude Certified Developer - Foundations', en: 'Claude Certified Developer - Foundations' },
+    issuer: 'Anthropic',
+    href: 'https://www.credly.com/badges/f0b8b4b8-d85f-4751-a37a-bd5400bd8d47/public_url',
+    image: '/img/claude-certified-developer-foundations.png',
+    imageFit: 'contain',
+    accentColor: '#CC785C',
+  },
+  {
+    title: {
+      pt: 'Capacitação Tecnológica em Visão Computacional e Inteligência Artificial Generativa',
+      en: 'Technology Training Program in Computer Vision and Generative Artificial Intelligence',
+    },
+    issuer: 'Instituto Vertex',
+    href: null,
+    image: '/img/vertex-logo.jpeg',
+    imageFit: 'contain',
+    accentColor: '#2DD4BF',
+  },
+  {
+    title: {
+      pt: 'AWS Generative AI and AI Agents with Amazon Bedrock',
+      en: 'AWS Generative AI and AI Agents with Amazon Bedrock',
+    },
+    issuer: 'AWS · Coursera',
+    href: 'https://www.coursera.org/account/accomplishments/professional-cert/9R031UZZ61KL',
+    image: '/img/aws-logo.png',
+    imageFit: 'contain',
+    accentColor: '#FF9900',
+  },
+  {
+    title: { pt: 'Formação DevOps', en: 'DevOps Training' },
+    issuer: 'Rocketseat',
+    href: 'https://app.rocketseat.com.br/certificates/82215bd8-7476-4f33-965b-b58aeecb79be',
+    image: '/img/rs-logo.jpeg',
+    imageFit: 'contain',
+    accentColor: '#8257E5',
+  },
+  {
+    title: { pt: 'SQL Advanced Certificate', en: 'SQL Advanced Certificate' },
+    issuer: 'HackerRank',
+    href: 'https://www.hackerrank.com/certificates/8d85fbfdf74d',
+    image: '/img/hr-logo.svg',
+    imageFit: 'contain',
+    accentColor: '#2EC866',
   },
 ]
 
