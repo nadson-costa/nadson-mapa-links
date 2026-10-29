@@ -1,6 +1,5 @@
 export const STRINGS = {
   pt: {
-    loading: 'Carregando...',
     back: 'Voltar',
     mainLinksLabel: 'Links principais',
     socialLinksLabel: 'Redes sociais',
@@ -10,7 +9,6 @@ export const STRINGS = {
     photoOf: 'Foto de',
   },
   en: {
-    loading: 'Loading...',
     back: 'Back',
     mainLinksLabel: 'Main links',
     socialLinksLabel: 'Social links',
