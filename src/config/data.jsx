@@ -1,4 +1,4 @@
-import { FileText, Code, Instagram, Linkedin, Github, Mail, FolderGit2, Presentation } from 'lucide-react'
+import { FileText, Award, Instagram, Linkedin, Github, Mail, FolderGit2, Presentation } from 'lucide-react'
 
 export const PROFILE_DATA = {
   name: 'Nadson Costa',
@@ -47,35 +47,44 @@ export const MAIN_LINKS = [
     view: 'talks',
   },
   {
+    id: 'certifications',
+    label: { pt: 'Principais certificações', en: 'Main certifications' },
+    description: { pt: 'Certificações e cursos que concluí', en: "Certifications and courses I've completed" },
+    icon: <Award size={18} />,
+    type: 'internal',
+    view: 'certifications',
+  },
+  {
     id: 'newsletter',
     label: { pt: 'Minha newsletter', en: 'My newsletter' },
     description: {
-      pt: 'Artigos semanais sobre engenharia de software e inteligência artificial',
-      en: 'Weekly articles about software engineering and artificial intelligence',
+      pt: 'Artigos sobre engenharia de software e inteligência artificial',
+      en: 'Articles about software engineering and artificial intelligence',
     },
     href: 'https://medium.com/@nadson-costa',
     icon: <FileText size={18} />,
-    type: 'external',
-  },
-  {
-    id: 'hackerrank',
-    label: { pt: 'Perfil HackerRank', en: 'HackerRank profile' },
-    description: { pt: 'Meus desafios e soluções no HackerRank', en: 'My challenges and solutions on HackerRank' },
-    href: 'https://www.hackerrank.com/profile/nadsonascosta',
-    icon: <Code size={18} />,
     type: 'external',
   },
 ]
 
 export const PROJECTS = [
   {
-    title: { pt: 'Sistema de checklist de qualidade', en: 'Quality checklist system' },
+    title: { pt: 'Developer Experience', en: 'Developer Experience' },
     description: {
-      pt: 'Sistema de gestão de qualidade para cliente do segmento de APH privado',
-      en: 'Quality management system for a private pre-hospital care (APH) client',
+      pt: 'Catálogo de skills para codificação assistida por IA que padroniza boas práticas de engenharia de software e segurança ao longo do SDLC: revisões baseadas em OWASP, geração de testes com verificação de mutação, padrões de arquitetura e integração com sistemas internos. Um CLI em TypeScript gerencia as skills nos assistentes de IA (Claude Code, Cursor etc.).',
+      en: 'AI-assisted coding skills catalog that standardizes software engineering and security best practices across the SDLC: OWASP-based reviews, test generation with mutation verification, architecture patterns and internal systems integration. A TypeScript CLI manages the skills across AI assistants (Claude Code, Cursor, etc.).',
     },
-    href: 'https://github.com/nadson-costa/cronos-checklists',
-    tech: 'FastAPI, Docker, PostgreSQL, Next.js, Tailwind CSS, Prometheus',
+    href: 'https://lnkd.in/p/ePyA58Ef',
+    tech: 'TypeScript, Markdown, Prompt Engineering',
+  },
+  {
+    title: { pt: 'Sistema de visão computacional para logística', en: 'Computer vision system for logistics' },
+    description: {
+      pt: 'Inspeção visual em tempo real de caixas numa esteira: um modelo YOLOv8 detecta avarias e dispara alertas automáticos por e-mail e SMS, com rastreamento de modelo via MLflow.',
+      en: 'Real-time visual inspection of boxes on a conveyor belt: a YOLOv8 model detects damage and automatically triggers email and SMS alerts, with model tracking via MLflow.',
+    },
+    href: 'https://github.com/nadson-costa/logistics-ai',
+    tech: 'FastAPI, YOLOv8, ONNX Runtime, MLflow, PostgreSQL, Docker',
   },
   {
     title: { pt: 'Implantação de infraestrutura de DevOps', en: 'DevOps infrastructure deployment' },
@@ -85,15 +94,6 @@ export const PROJECTS = [
     },
     href: 'https://github.com/nadson-costa/self-hosted-paas-vps',
     tech: 'Ubuntu, Docker, NGINX Proxy Manager, Gitea',
-  },
-  {
-    title: { pt: 'Plataforma interna de e-mail marketing', en: 'Internal email marketing platform' },
-    description: {
-      pt: 'API RESTful completa, servindo como o backend para uma interface de frontend.',
-      en: 'Complete RESTful API, serving as the backend for a frontend interface.',
-    },
-    href: 'https://github.com/nadson-costa/sistema-email-marketing',
-    tech: 'Python, FastAPI, PostgreSQL, Docker, Celery, Redis',
   },
 ]
 
@@ -119,20 +119,71 @@ export const TALKS = [
       en: 'First steps to implementing an AI agent and how it can transform your customer service, bringing more agility, personalization and efficiency to your business.',
     },
     image: '/img/ia-bitrix.webp',
+    imagePosition: 'center 65%',
     date: { pt: 'Outubro/2025', en: 'October/2025' },
     location: 'YouTube - CRMThink',
     href: 'https://youtu.be/c1bZDD302M4?si=Qruf2STL7ec6EyEO',
   },
   {
-    title: { pt: 'Hackathon Detran Alagoas 2025 ', en: 'Hackathon Detran Alagoas 2025' },
+    title: { pt: 'Hackathon UNCISAL 2026', en: 'Hackathon UNCISAL 2026' },
     description: {
-      pt: 'Sistema integrado que centraliza, organiza e transforma dados e informações de diversas fontes em insights, análises preditivas e alertas automáticos',
-      en: 'Integrated system that centralizes, organizes and transforms data and information from multiple sources into insights, predictive analytics and automatic alerts',
+      pt: 'Sistema de apoio à decisão clínica em urgência e emergência: monitora sinais vitais na sala de espera com IA e entrega um copiloto de prescrição ancorado em protocolos do Ministério da Saúde. 2º lugar no III Weekathon de Inovação em Saúde e Tecnologia da UNCISAL.',
+      en: 'Clinical decision-support system for emergency care: AI-powered vital-sign monitoring in the waiting room and a prescription copilot grounded in Brazilian Ministry of Health protocols. 2nd place at UNCISAL\'s III Weekathon on Health and Technology Innovation.',
     },
-    image: '/img/detran.webp',
-    date: { pt: 'Junho/2025', en: 'June/2025' },
-    location: 'Espaço Armazém, Maceió/AL',
-    href: 'https://www.linkedin.com/posts/nadsoncosta_inovaaexaeto-detran-hackathon-activity-7336364942578569217-Cirt?',
+    image: '/img/hackathon.webp',
+    imagePosition: 'center 20%',
+    date: { pt: 'Maio/2026', en: 'May/2026' },
+    location: 'UNCISAL, Maceió/AL',
+    href: 'https://github.com/nadson-costa/hackathon-uncisal-2026',
+  },
+]
+
+export const CERTIFICATIONS = [
+  {
+    title: { pt: 'Claude Certified Developer - Foundations', en: 'Claude Certified Developer - Foundations' },
+    issuer: 'Anthropic',
+    href: 'https://www.credly.com/badges/f0b8b4b8-d85f-4751-a37a-bd5400bd8d47/public_url',
+    image: '/img/claude-certified-developer-foundations.png',
+    imageFit: 'contain',
+    accentColor: '#CC785C',
+  },
+  {
+    title: {
+      pt: 'Capacitação Tecnológica em Visão Computacional e Inteligência Artificial Generativa',
+      en: 'Technology Training Program in Computer Vision and Generative Artificial Intelligence',
+    },
+    issuer: 'Instituto Vertex',
+    href: null,
+    image: '/img/vertex-logo.jpeg',
+    imageFit: 'contain',
+    accentColor: '#2DD4BF',
+  },
+  {
+    title: {
+      pt: 'AWS Generative AI and AI Agents with Amazon Bedrock',
+      en: 'AWS Generative AI and AI Agents with Amazon Bedrock',
+    },
+    issuer: 'AWS · Coursera',
+    href: 'https://www.coursera.org/account/accomplishments/professional-cert/9R031UZZ61KL',
+    image: '/img/aws-logo.png',
+    imageFit: 'contain',
+    accentColor: '#FF9900',
+  },
+  {
+    title: { pt: 'Formação DevOps', en: 'DevOps Training' },
+    issuer: 'Rocketseat',
+    href: 'https://app.rocketseat.com.br/certificates/82215bd8-7476-4f33-965b-b58aeecb79be',
+    image: '/img/rs-logo.jpeg',
+    imageFit: 'contain',
+    accentColor: '#8257E5',
+  },
+  {
+    title: { pt: 'SQL Advanced Certificate', en: 'SQL Advanced Certificate' },
+    issuer: 'HackerRank',
+    href: 'https://www.hackerrank.com/certificates/8d85fbfdf74d',
+    image: '/img/hr-logo.svg',
+    imageFit: 'contain',
+    accentColor: '#2EC866',
   },
 ]
 
