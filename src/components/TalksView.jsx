@@ -19,9 +19,9 @@ export default function TalksView({ onBack }) {
       </button>
 
       <section className="w-full" aria-label="Palestras e treinamentos">
-        {TALKS.map((talk, index) => (
+        {TALKS.map((talk) => (
           <TalkCard
-            key={index}
+            key={talk.href}
             title={talk.title}
             description={talk.description}
             image={talk.image}
