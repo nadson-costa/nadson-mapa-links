@@ -69,13 +69,22 @@ export const MAIN_LINKS = [
 
 export const PROJECTS = [
   {
-    title: { pt: 'Sistema de checklist de qualidade', en: 'Quality checklist system' },
+    title: { pt: 'Developer Experience', en: 'Developer Experience' },
     description: {
-      pt: 'Sistema de gestão de qualidade para cliente do segmento de APH privado',
-      en: 'Quality management system for a private pre-hospital care (APH) client',
+      pt: 'Catálogo de skills para codificação assistida por IA que padroniza boas práticas de engenharia de software e segurança ao longo do SDLC: revisões baseadas em OWASP, geração de testes com verificação de mutação, padrões de arquitetura e integração com sistemas internos. Um CLI em TypeScript gerencia as skills nos assistentes de IA (Claude Code, Cursor etc.).',
+      en: 'AI-assisted coding skills catalog that standardizes software engineering and security best practices across the SDLC: OWASP-based reviews, test generation with mutation verification, architecture patterns and internal systems integration. A TypeScript CLI manages the skills across AI assistants (Claude Code, Cursor, etc.).',
     },
-    href: 'https://github.com/nadson-costa/cronos-checklists',
-    tech: 'FastAPI, Docker, PostgreSQL, Next.js, Tailwind CSS, Prometheus',
+    href: 'https://lnkd.in/p/ePyA58Ef',
+    tech: 'TypeScript, Markdown, Prompt Engineering',
+  },
+  {
+    title: { pt: 'Sistema de visão computacional para logística', en: 'Computer vision system for logistics' },
+    description: {
+      pt: 'Inspeção visual em tempo real de caixas numa esteira: um modelo YOLOv8 detecta avarias e dispara alertas automáticos por e-mail e SMS, com rastreamento de modelo via MLflow.',
+      en: 'Real-time visual inspection of boxes on a conveyor belt: a YOLOv8 model detects damage and automatically triggers email and SMS alerts, with model tracking via MLflow.',
+    },
+    href: 'https://github.com/nadson-costa/logistics-ai',
+    tech: 'FastAPI, YOLOv8, ONNX Runtime, MLflow, PostgreSQL, Docker',
   },
   {
     title: { pt: 'Implantação de infraestrutura de DevOps', en: 'DevOps infrastructure deployment' },
@@ -85,15 +94,6 @@ export const PROJECTS = [
     },
     href: 'https://github.com/nadson-costa/self-hosted-paas-vps',
     tech: 'Ubuntu, Docker, NGINX Proxy Manager, Gitea',
-  },
-  {
-    title: { pt: 'Plataforma interna de e-mail marketing', en: 'Internal email marketing platform' },
-    description: {
-      pt: 'API RESTful completa, servindo como o backend para uma interface de frontend.',
-      en: 'Complete RESTful API, serving as the backend for a frontend interface.',
-    },
-    href: 'https://github.com/nadson-costa/sistema-email-marketing',
-    tech: 'Python, FastAPI, PostgreSQL, Docker, Celery, Redis',
   },
 ]
 
