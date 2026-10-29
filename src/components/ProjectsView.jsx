@@ -1,8 +1,14 @@
 import { ArrowLeft } from 'lucide-react'
 import ProjectCard from './ProjectCard'
 import { PROJECTS } from '@/config/data'
+import { useLanguage } from '@/i18n/LanguageContext'
+import { localize } from '@/i18n/localize'
+import { STRINGS } from '@/i18n/strings'
 
 export default function ProjectsView({ onBack }) {
+  const { language } = useLanguage()
+  const s = STRINGS[language]
+
   return (
     <div className="w-full animate-fade-in">
       <button
@@ -15,19 +21,19 @@ export default function ProjectsView({ onBack }) {
         "
       >
         <ArrowLeft className="w-4 h-4" />
-        <span className="text-sm">Voltar</span>
+        <span className="text-sm">{s.back}</span>
       </button>
 
       <h2 className="text-xl font-medium text-white mb-5">
-        Principais projetos
+        {s.projectsHeading}
       </h2>
 
-      <section className="w-full" aria-label="Projetos em destaque">
+      <section className="w-full" aria-label={s.projectsLabel}>
         {PROJECTS.map((project) => (
           <ProjectCard
             key={project.href}
-            title={project.title}
-            description={project.description}
+            title={localize(project.title, language)}
+            description={localize(project.description, language)}
             href={project.href}
             tech={project.tech}
           />

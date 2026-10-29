@@ -1,8 +1,14 @@
 import { ArrowLeft } from 'lucide-react'
 import TalkCard from './TalkCard'
 import { TALKS } from '@/config/data'
+import { useLanguage } from '@/i18n/LanguageContext'
+import { localize } from '@/i18n/localize'
+import { STRINGS } from '@/i18n/strings'
 
 export default function TalksView({ onBack }) {
+  const { language } = useLanguage()
+  const s = STRINGS[language]
+
   return (
     <div className="w-full animate-fade-in">
       <button
@@ -15,17 +21,17 @@ export default function TalksView({ onBack }) {
         "
       >
         <ArrowLeft className="w-4 h-4" />
-        <span className="text-sm">Voltar</span>
+        <span className="text-sm">{s.back}</span>
       </button>
 
-      <section className="w-full" aria-label="Palestras e treinamentos">
+      <section className="w-full" aria-label={s.talksLabel}>
         {TALKS.map((talk) => (
           <TalkCard
             key={talk.href}
-            title={talk.title}
-            description={talk.description}
+            title={localize(talk.title, language)}
+            description={localize(talk.description, language)}
             image={talk.image}
-            date={talk.date}
+            date={localize(talk.date, language)}
             location={talk.location}
             href={talk.href}
           />
