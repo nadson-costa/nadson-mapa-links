@@ -5,6 +5,7 @@ const BASE_CLASSES = `
   bg-background-secondary hover:bg-background-hover
   text-white rounded-lg px-4 py-5
   transition-smooth
+  hover:-translate-y-px hover:shadow-[0_0_10px_-5px_#3b82f6,0_0_18px_-9px_#22d3ee]
   focus:outline-none focus:ring-2 focus:ring-white/20
 `
 

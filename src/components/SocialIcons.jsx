@@ -8,7 +8,7 @@ export default function SocialIcons({ links, ariaLabel }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={link.label}
-          className="text-gray-400 hover:text-white transition-smooth"
+          className="text-gray-400 hover:text-white hover:scale-110 hover:drop-shadow-[0_0_6px_#3b82f6] transition-smooth"
         >
           {link.icon}
         </a>
